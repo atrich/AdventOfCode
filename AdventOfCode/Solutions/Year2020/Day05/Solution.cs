@@ -62,7 +62,6 @@ namespace AdventOfCode.Solutions.Year2020
         protected override string SolvePartTwo()
         {
             string[] lines = Input.SplitByNewline();
-            int maxseatid = 0;
             var seats = new SortedSet<int>();
 
             foreach (var line in lines)
