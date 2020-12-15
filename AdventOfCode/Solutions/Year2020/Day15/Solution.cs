@@ -26,26 +26,19 @@ namespace AdventOfCode.Solutions.Year2020
             }
 
             var num = (ulong)nums.Last();
-            var prevdiff = 0ul;
+            var next = 0ul;
 
             while (round < lastRound)
             {
-                if (prevdiff == 0)
-                {
-                    num = 0;
-                }
-                else
-                {
-                    num = prevdiff;
-                }
+                num = next;
 
                 if (counts.ContainsKey(num))
                 {
-                    prevdiff = round - counts[num];
+                    next = round - counts[num];
                 }
                 else
                 {
-                    prevdiff = 0;
+                    next = 0;
                 }
 
                 counts[num] = round++;
