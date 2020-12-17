@@ -113,14 +113,7 @@ namespace AdventOfCode.Solutions.Year2020
                 y++;
             }
 
-            int minw = -1;
-            int maxw = 1;
-            int minz = -1;
-            int maxz = 1;
-            int minx = -1;
-            int maxx = lines[0].Length;
-            int miny = -1;
-            int maxy = lines.Length;
+            int minw = -1, maxw = 1, minz = -1, maxz = 1, minx = -1, maxx = lines[0].Length, miny = -1, maxy = lines.Length;
 
             for (int i = 0; i < 6; i++)
             {
@@ -177,14 +170,8 @@ namespace AdventOfCode.Solutions.Year2020
                 }
 
                 map = nextmap;
-                maxx++;
-                maxy++;
-                maxz++;
-                maxw++;
-                minx--;
-                miny--;
-                minz--;
-                minw--;
+                maxx++; maxy++; maxz++; maxw++;
+                minx--; miny--; minz--; minw--;
             }
 
             return map.Aggregate(0, (s, w) => s + w.Value.Aggregate(0, (s, z) => s + z.Value.Aggregate(0, (s, y) => s + y.Value.Count))).ToString();
