@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Solutions\Year2020\Day19\testinput.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Solutions\Year2020\Day19\testinput.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Solutions\Year2020\Day19\Solution.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
